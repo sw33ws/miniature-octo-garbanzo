@@ -20,7 +20,7 @@ function questions() {
         {
             type: 'list',
             message: 'What do you want to do?',
-            name: 'Options ',
+            name: 'options',
             choices: ['view all Departments', 'View all Roles', 'View all employees', 'Add a Department', 'Add a role', 'Add an Employee', 'Update an Employee Role'],
         },
 ]).then (data => {
