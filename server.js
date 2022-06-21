@@ -12,7 +12,7 @@ const db = mysql.createConnection(
   {
     host:'localhost',
     user: 'root',
-    password: '%YellowTree65',
+    password: '',
     database: 'EmployeeTracker_db'
 })
 
