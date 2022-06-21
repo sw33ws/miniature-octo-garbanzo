@@ -22,7 +22,7 @@ function questions() {
             type: 'list',
             message: 'What do you want to do?',
             name: 'options',
-            choices: ['view all Departments', 'View all Roles', 'View all employees', 'Add a Department', 'Add a role', 'Add an Employee', 'Update an Employee Role'],
+            choices: ['view all Departments', 'View all Roles', 'View all employees', 'Add a Department', 'Add a role', 'Add an Employee', 'Update an Employee Role', 'Exit'],
         },
 ]).then (data => {
     if (data.options == 'view all Departments') {
@@ -55,6 +55,9 @@ function questions() {
     if (data.options == 'Update an Employee Role') {
         
     }
+    if (data.options == 'Exit') {
+        console.log("Have a nice day!")
+    }
 })
 };
 
@@ -65,7 +68,7 @@ function addingDepartment() {
       {
         type: 'input',
         message: 'Write your Department here!',
-        name: 'Department ',
+        name: 'Department',
       },
 ])
 };
@@ -77,17 +80,17 @@ function addingRole() {
       {
         type: 'input',
         message: 'Write your Title here!',
-        name: 'Title ',
+        name: 'Title',
       },
       {
         type: 'input',
         message: 'Write your Salary here!',
-        name: 'Salary ',
+        name: 'Salary',
       },
       {
         type: 'list',
         message: 'Choice your Department',
-        name: 'id ',
+        name: 'id',
         // add a thing that chooses the Department
       },
 ])
@@ -100,23 +103,23 @@ function addingEmployee() {
       {
         type: 'input',
         message: 'Write your First Name here!',
-        name: 'firstName ',
+        name: 'firstName',
       },
       {
         type: 'input',
         message: 'Write your Last Name here!',
-        name: 'lastName ',
+        name: 'lastName',
       },
       {
         type: 'list',
         message: 'what is your role!',
-        name: 'role ',
+        name: 'role',
         // add a thing that chooses the role
       },
       {
         type: 'list',
         message: 'Who is your manager!',
-        name: 'manager ',
+        name: 'manager',
         // add a thing that chooses the manager
       },
 ])
