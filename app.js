@@ -96,9 +96,16 @@ function addingRole() {
         type: 'list',
         message: 'Choice your Department!',
         name: 'id',
-        // add a thing that chooses the Department
+        // add the list of departments
       },
-])
+]) .then (data => {
+  db.query("INSERT INTO role SET?", {
+    title: data.Title,
+    salary: data.Salary,
+    department_id: data.id
+  })
+  questions();
+})
 };
 
 // The New Employee
@@ -122,12 +129,19 @@ function addingEmployee() {
         // add a thing that chooses the role
       },
       {
-        type: 'list',
+        type: 'input',
         message: 'Who is your manager?',
         name: 'manager',
-        // add a thing that chooses the manager
       },
-])
+]) .then (data => {
+  db.query('INSERT INTO employees SET?', {
+    first_name: data.firstName,
+    last_name: data.lastName,
+    role_id: data.role,
+    manager_id: data.manager
+  })
+  questions();
+})
 };
 
 // Updating Employee Role
