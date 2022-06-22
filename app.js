@@ -96,7 +96,7 @@ function addingRole() {
         type: 'list',
         message: 'Choice your Department!',
         name: 'id',
-        // add the list of departments
+        //choices: department,
       },
 ]) .then (data => {
   db.query("INSERT INTO role SET?", {
@@ -126,7 +126,7 @@ function addingEmployee() {
         type: 'list',
         message: 'what is your role?',
         name: 'role',
-        // add a thing that chooses the role
+        //choices: role,
       },
       {
         type: 'input',
