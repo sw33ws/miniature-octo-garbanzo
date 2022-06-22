@@ -74,6 +74,7 @@ function addingDepartment() {
   db.query("INSERT INTO departments SET?", {
     name: data.Department
   })
+  questions();
 }) 
 };
 
