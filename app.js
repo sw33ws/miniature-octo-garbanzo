@@ -53,7 +53,7 @@ function questions() {
         addingEmployee();
     }
     if (data.options == 'Update an Employee Role') {
-        
+      updatingEmployee();
     }
     if (data.options == 'Exit') {
         console.log("Have a nice day!")
@@ -70,7 +70,11 @@ function addingDepartment() {
         message: 'Write your Department here!',
         name: 'Department',
       },
-])
+]) .then (data => {
+  db.query("INSERT INTO departments SET?", {
+    name: data.Department
+  })
+}) 
 };
 
 // The New Roles input
@@ -89,7 +93,7 @@ function addingRole() {
       },
       {
         type: 'list',
-        message: 'Choice your Department',
+        message: 'Choice your Department!',
         name: 'id',
         // add a thing that chooses the Department
       },
@@ -112,15 +116,34 @@ function addingEmployee() {
       },
       {
         type: 'list',
-        message: 'what is your role!',
+        message: 'what is your role?',
         name: 'role',
         // add a thing that chooses the role
       },
       {
         type: 'list',
-        message: 'Who is your manager!',
+        message: 'Who is your manager?',
         name: 'manager',
         // add a thing that chooses the manager
       },
+])
+};
+
+// Updating Employee Role
+function updatingEmployee() {
+  inquirer
+.prompt([
+    {
+      type: 'list',
+      message: 'What employee needs a new role?',
+      name: 'role',
+      // add a thing that chooses the role
+    },
+    {
+      type: 'list',
+      message: "What's the new role?",
+      name: 'manager',
+      // add a thing that chooses the manager
+    },
 ])
 };
